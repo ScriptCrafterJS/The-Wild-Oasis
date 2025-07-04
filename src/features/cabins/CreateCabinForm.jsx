@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 import Input from "../../ui/Input";
 import Form from "../../ui/Form";
 import Button from "../../ui/Button";
@@ -32,6 +30,7 @@ function CreateCabinForm() {
   });
 
   function onSubmit(newCabin) {
+    console.log(newCabin);
     mutate({ ...newCabin, image: newCabin.image[0] });
   }
 
