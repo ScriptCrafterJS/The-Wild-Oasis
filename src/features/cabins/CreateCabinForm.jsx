@@ -14,6 +14,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   const isWorking = isCreating || isEditting;
 
   const { id: editId, ...editValues } = cabinToEdit;
+
   //? Since this component is used for both creating and editing cabins,
   //? we need to check if we are editing or not:
   const isEditSession = Boolean(editId);
@@ -27,6 +28,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   function onSubmit(newCabin) {
     const image =
       typeof newCabin.image === "string" ? newCabin.image : newCabin.image[0];
+
     if (isEditSession) {
       editCabin(
         { newCabinData: { ...newCabin, image }, id: editId },
